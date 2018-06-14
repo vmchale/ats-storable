@@ -37,6 +37,6 @@ main :: IO ()
 main = hspec $ parallel $
     describe "readPtr" $ do
         it "should work on a combined sum/product type" $
-            somethingVal >>= (`shouldBe` (Some (Pair 1 6)))
+            somethingVal >>= (`shouldBe` Some (Pair 1 6))
         it "should work on a combined sum/product type" $
             (pure $ pendingWith "not yet") somethingElseVal -- somethingElseVal >>= (`shouldBe` (First 2))
