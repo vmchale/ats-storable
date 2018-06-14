@@ -1,3 +1,6 @@
+target
+aeson-demo/target
+dhall-ats/target
 .ghc*
 .atspkg
 *.c
