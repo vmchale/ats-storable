@@ -47,12 +47,11 @@ install:
   - cabal new-build all --dependencies-only
 
 script:
-  - rm -rf dist-newstyle
   - curl -sL https://raw.github.com/ndmitchell/hlint/master/misc/travis.sh | sh -s src dhall-ats aeson-demo test
   - curl -sSl https://raw.githubusercontent.com/vmchale/atspkg/master/bash/install.sh | bash -s
   - atspkg build -vv
-  - ls ../dist-newstyle/build
   - cabal new-build ats-storable
+  - ls ../dist-newstyle/build
   - cd dhall-ats
   - atspkg run
   - cd ../aeson-demo
