@@ -6,7 +6,7 @@ license-file: LICENSE
 copyright: Copyright: (c) 2018 Vanessa McHale
 maintainer: vamchale@gmail.com
 author: Vanessa McHale
-bug-reports: https://github.com/vmchale/ats-storable/issues
+bug-reports: https://hub.darcs.net/vmchale/ats-storable/issues
 synopsis: Marshal ATS types into Haskell
 description:
     Facilities for sharing types between ATS and Haskell
@@ -17,8 +17,8 @@ extra-source-files:
     ats-src/*.dats
 
 source-repository head
-    type: git
-    location: git@github.com:vmchale/ats-storable.git
+    type: darcs
+    location: https://hub.darcs.net/vmchale/ats-storable
 
 flag development
     description:
