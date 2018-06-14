@@ -51,8 +51,8 @@ script:
   - curl -sSl https://raw.githubusercontent.com/vmchale/atspkg/master/bash/install.sh | bash -s
   - atspkg build -vv
   - cabal new-build ats-storable
-  - ls ../dist-newstyle/build
   - cd dhall-ats
+  - ls ../dist-newstyle/build
   - atspkg run
   - cd ../aeson-demo
   - atspkg run
