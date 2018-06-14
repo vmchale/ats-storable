@@ -1,7 +1,5 @@
 # dhall-ats
 
-[![Build Status](https://travis-ci.org/vmchale/dhall-ats.svg?branch=master)](https://travis-ci.org/vmchale/dhall-ats)
-
 This is a small example demonstrating how to use Dhall in ATS.
 
 ## Building

@@ -1,5 +1,7 @@
 # ats-storable
 
+[![Build Status](https://travis-ci.org/vmchale/ats-storable.svg?branch=master)](https://travis-ci.org/vmchale/ats-storable)
+
 Fork of
 [generic-storable](hackage.haskell.org/package/generic-storable) altered to
 work with ATS' algebraic data types.
