@@ -1,0 +1,14 @@
+name: foreign
+version: 0.1.0.0
+cabal-version: >= 1.2
+build-type: Simple
+
+library
+  build-depends: base < 5
+               , dhall >= 1.14.0
+               , filepath
+               , ats-storable
+               , text
+  exposed-modules: Foreign
+  hs-source-dirs: .
+  ghc-options: -Wall -Werror -Wincomplete-uni-patterns -Wincomplete-record-updates -Wcompat

@@ -1,0 +1,9 @@
+*.h
+tags
+*.h
+*.o
+*.hi
+target
+.atspkg
+*.c
+src/gen.dats

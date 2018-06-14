@@ -1,0 +1,20 @@
+---
+- functions:
+  - {name: unsafePerformIO, within: []}  # unsafePerformIO can appear nowhere
+  - {name: error, within: [Main]}  # throw real errors
+  - {name: fromJust, within: [AesonDemo]}  # this is hell to track down
+  - {name: foldl, within: []}  # foldl has bad properties
+
+
+- error: {lhs: "hylo embed", rhs: "ana", name: "Use anamorphism"}
+- error: {lhs: "hylo f project", rhs: "cata f", name: "Use catamorphism"}
+- error: {lhs: "concat", rhs: "join", name: "Generalize concat"}
+- error: {lhs: "concatMap", rhs: "(=<<)", name: "Generalize concatMap"}
+- error: {lhs: "f >> pure ()", rhs: "void f", name: "Use void"}
+- error: {lhs: "const f", rhs: "pure f", name: "Generalize const"}
+- ignore: {name: Use camelCase, within: [AesonDemo]}
+- ignore: {name: Unused LANGUAGE pragma, with: [Foreign.Storable.ATS]}
+- ignore: {name: Use String, with: [Foreign.Storable.ATS]}
+
+- fixity: infixr 3 ***
+- fixity: infixr 3 &&&

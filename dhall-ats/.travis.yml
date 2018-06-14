@@ -1,0 +1,27 @@
+---
+language: c
+cache:
+  directories:
+    - $HOME/.cabal
+    - $HOME/.ghc
+addons:
+  apt:
+    packages:
+      - cabal-install-head
+      - ghc-8.2.2
+      - libgmp3-dev
+    sources:
+      - hvr-ghc
+before_install:
+  - export PATH=/opt/ghc/bin:$PATH
+  - cabal update
+install:
+  - rm -rf $HOME/.local/bin
+  - mkdir -p $HOME/.local/bin
+  - cabal update
+  - cabal new-install ats-pkg --symlink-bindir $HOME/.local/bin --happy-options='-gcsa' --alex-options='-g' -j1
+  - export PATH=$HOME/.local/bin:$PATH
+  - atspkg -V
+script:
+  - curl -sL https://raw.githubusercontent.com/vmchale/tomlcheck/master/sh/check | sh -s .atsfmt.toml
+  - atspkg run

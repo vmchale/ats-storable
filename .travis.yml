@@ -1,0 +1,58 @@
+---
+sudo: false
+cache:
+  directories:
+    - $HOME/.cabal
+    - $HOME/.ghc
+    - $HOME/.atspkg
+addons:
+  apt:
+    packages:
+      - libgmp3-dev
+matrix:
+  include:
+
+    # Linux
+    - env: TARGET=x86_64-unknown-linux
+      addons:
+        apt:
+          update: true
+          sources:
+            - hvr-ghc
+          packages:
+            - ghc-8.4.2
+            - cabal-install-head
+
+      language: c
+
+    # OS X
+    - env: TARGET=x86_64-apple-darwin
+      os: osx
+      language: c
+
+before_install:
+  - mkdir -p ~/.local/bin
+  - export PATH=$HOME/.local/bin:$PATH
+  - |
+    if [ `uname` = "Darwin" ]
+    then
+      brew install cabal-install
+      cabal update
+    else
+      export PATH=/opt/ghc/bin:$PATH
+      cabal update
+    fi
+
+install:
+  - cabal new-build all --dependencies-only
+
+script:
+  - rm -rf dist-newstyle
+  - curl -sL https://raw.github.com/ndmitchell/hlint/master/misc/travis.sh | sh -s ats-format ats-pkg cdeps dependency hs2ats language-ats shake-ats shake-ext
+  - curl -sSl https://raw.githubusercontent.com/vmchale/atspkg/master/bash/install.sh | bash -s
+  - atspkg build
+  - travis_wait 20 cabal new-build all
+  - cd dhall-ats
+  - atspkg run
+  - cd ../aeson-demo
+  - atspkg run

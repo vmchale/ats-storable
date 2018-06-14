@@ -1,0 +1,13 @@
+name: aeson-demo
+version: 0.1.0.6
+cabal-version: >= 1.2
+build-type: Simple
+
+library
+  build-depends: base < 5
+               , ats-storable
+               , aeson
+               , bytestring
+  exposed-modules: AesonDemo
+  hs-source-dirs: .
+  ghc-options: -Wall -Werror -Wincomplete-uni-patterns -Wincomplete-record-updates -Wcompat

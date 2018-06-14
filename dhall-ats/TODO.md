@@ -1,0 +1,3 @@
+- [ ] Figure out how general data types work (universal/recursive vs. concrete?)
+- [ ] Ease writing `Storable` instances? See what can be done on the ATS side.
+- [ ] `newForeignPtr`? we'd like some way of not deallocating it later.

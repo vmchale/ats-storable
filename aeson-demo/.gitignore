@@ -1,0 +1,12 @@
+.ghc.*
+*.h
+ATS2-Postiats-include-0.3.8
+cbits
+tags
+*.c
+dist-newstyle
+dist
+.stack-work
+*.o
+*.so
+*.a

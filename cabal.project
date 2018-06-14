@@ -1,0 +1,9 @@
+packages: ./
+        , aeson-demo/hs
+        , dhall-ats/hs
+
+constraints:
+  ats-storable +development +with-atsdeps
+
+tests: True
+benchmarks: True
