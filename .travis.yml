@@ -50,7 +50,7 @@ script:
   - rm -rf dist-newstyle
   - curl -sL https://raw.github.com/ndmitchell/hlint/master/misc/travis.sh | sh -s src dhall-ats aeson-demo test
   - curl -sSl https://raw.githubusercontent.com/vmchale/atspkg/master/bash/install.sh | bash -s
-  - atspkg build
+  - atspkg build -vv
   - cabal new-build ats-storable
   - cd dhall-ats
   - atspkg run
