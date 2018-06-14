@@ -52,7 +52,6 @@ script:
   - atspkg build -vv
   - cabal new-build ats-storable
   - cd dhall-ats
-  - ls ../dist-newstyle/build
   - atspkg run
   - cd ../aeson-demo
   - atspkg run
