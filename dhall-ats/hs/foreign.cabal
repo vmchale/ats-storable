@@ -5,7 +5,7 @@ build-type: Simple
 
 library
   build-depends: base < 5
-               , dhall >= 1.14.0
+               , dhall >= 1.15.0
                , filepath
                , ats-storable
                , text

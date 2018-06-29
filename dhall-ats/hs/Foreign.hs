@@ -9,7 +9,7 @@ module Foreign where
 import           Control.Monad
 import           Data.Bifunctor
 import           Data.Data
-import qualified Data.Text.Lazy       as TL
+import qualified Data.Text            as T
 import           Dhall
 import           Foreign.C.String
 import           Foreign.C.Types
@@ -29,7 +29,7 @@ instance Bifunctor Pair where
 type Product = Pair CInt CInt
 
 readDhall :: FilePath -> IO (Option Product)
-readDhall p = fmap (join bimap g) <$> input auto (TL.pack p)
+readDhall p = fmap (join bimap g) <$> input auto (T.pack p)
     where g :: Integer -> CInt
           g = fromIntegral
 
