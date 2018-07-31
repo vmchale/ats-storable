@@ -4,6 +4,3 @@ packages: ./
 
 constraints:
   ats-storable +development +with-atsdeps
-
-tests: True
-benchmarks: True
