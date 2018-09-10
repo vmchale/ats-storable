@@ -52,6 +52,6 @@ script:
   - atspkg build -vv
   - cabal new-build ats-storable
   - cd dhall-ats
-  - atspkg run
+  - travis_wait 40 atspkg run
   - cd ../aeson-demo
-  - atspkg run
+  - travis_wait 40 atspkg run
