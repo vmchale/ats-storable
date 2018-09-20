@@ -49,7 +49,7 @@ install:
 script:
   - curl -sL https://raw.github.com/ndmitchell/hlint/master/misc/travis.sh | sh -s src dhall-ats aeson-demo test
   - curl -sSl https://raw.githubusercontent.com/vmchale/atspkg/master/bash/install.sh | bash -s
-  - atspkg build -vv
+  - travis_wait 40 atspkg build -vv
   - cabal new-build ats-storable
   - cd dhall-ats
   - travis_wait 40 atspkg run
