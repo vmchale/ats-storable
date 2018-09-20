@@ -5,6 +5,7 @@ cache:
     - $HOME/.cabal
     - $HOME/.ghc
     - $HOME/.atspkg
+    - ./dist-newstyle
 addons:
   apt:
     packages:
