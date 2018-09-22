@@ -6,6 +6,8 @@ cache:
     - $HOME/.ghc
     - $HOME/.atspkg
     - ./dist-newstyle
+    - dhall-ats/.atspkg
+    - aeson-demo/.atspkg
 addons:
   apt:
     packages:
