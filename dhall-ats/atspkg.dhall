@@ -11,6 +11,6 @@ in prelude.default ⫽
       }
     ]
     , dependencies = prelude.mapPlainDeps [ "hs-bind" ]
-    , ccompiler = "ghc"
+    , ccompiler = "ghc-8.4.3"
     , cflags = [ "-optc-O2", "hs/Foreign" ]
   }
